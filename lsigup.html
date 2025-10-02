@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #17a2b8 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animated background elements */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 15s ease-in-out infinite;
+}
+
+body::before {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+body::after {
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  right: 15%;
+  animation-delay: 7s;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1); 
+    opacity: 0.7; 
+  }
+  33% { 
+    transform: translateY(-30px) rotate(120deg) scale(1.1); 
+    opacity: 0.4; 
+  }
+  66% { 
+    transform: translateY(15px) rotate(240deg) scale(0.9); 
+    opacity: 0.8; 
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  margin: 0;
+  padding: 40px 35px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.1),
+    0 4px 20px rgba(40, 167, 69, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(40, 167, 69, 0.1),
+    transparent
+  );
+  transition: left 0.8s ease;
+}
+
+.container:hover::before {
+  left: 100%;
+}
+
+.container:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.15),
+    0 8px 30px rgba(40, 167, 69, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Input styling */
+input {
+  width: 100%;
+  margin: 12px 0;
+  padding: 16px 20px;
+  border: 2px solid rgba(40, 167, 69, 0.2);
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-sizing: border-box;
+  position: relative;
+}
+
+input::placeholder {
+  color: #999;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #28a745;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 0 0 4px rgba(40, 167, 69, 0.1),
+    0 6px 20px rgba(40, 167, 69, 0.15),
+    inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transform: translateY(-3px);
+}
+
+input:focus::placeholder {
+  color: #28a745;
+  transform: translateX(8px);
+}
+
+input:hover:not(:focus) {
+  border-color: rgba(40, 167, 69, 0.4);
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.1);
+}
+
+/* Different input types with subtle variations */
+input[type="email"]:focus {
+  border-color: #20c997;
+  box-shadow: 
+    0 0 0 4px rgba(32, 201, 151, 0.1),
+    0 6px 20px rgba(32, 201, 151, 0.15);
+}
+
+input[type="password"]:focus {
+  border-color: #17a2b8;
+  box-shadow: 
+    0 0 0 4px rgba(23, 162, 184, 0.1),
+    0 6px 20px rgba(23, 162, 184, 0.15);
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  margin: 20px 0 10px 0;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #218838 0%, #1ea885 100%);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(40, 167, 69, 0.4);
+}
+
+button:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+}
+
+/* Success pulse animation */
+button.success {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  animation: successPulse 1.5s ease;
+}
+
+@keyframes successPulse {
+  0% { 
+    transform: scale(1); 
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3); 
+  }
+  50% { 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6); 
+  }
+  100% { 
+    transform: scale(1); 
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3); 
+  }
+}
+
+/* Loading state */
+button.loading {
+  pointer-events: none;
+  opacity: 0.8;
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+}
+
+button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Form title styling */
+.form-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.form-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border-radius: 2px;
+}
+
+/* Progress indicator for form fields */
+.progress-bar {
+  height: 4px;
+  background: rgba(40, 167, 69, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .container {
+    margin: 10px;
+    padding: 30px 25px;
+  }
+  
+  input {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  button {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+}
+
+/* Accessibility improvements */
+input:focus-visible {
+  outline: 2px solid #28a745;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Invalid input states */
+input:invalid:not(:placeholder-shown) {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="newUsername" placeholder="Choose Username" required>
+      <input type="password" id="newPassword" placeholder="Choose Password" required>
+      <!--<input type="email" id="newemail" placeholder="Email id" required>-->
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="lsigin.html">Sign In</a></p>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const newUser = document.getElementById("newUsername").value;
+      const newPass = document.getElementById("newPassword").value;
+      //const newel = document.getElementById("newemail").value;
+
+      // Save to localStorage
+      localStorage.setItem("username", newUser);
+      localStorage.setItem("password", newPass);
+      //localStorage.setItem("email", newel);
+
+      alert("Account created successfully! You can now sign in.");
+      window.location.href = "lsigin.html";
+    });
+    // Phone number validation example
+    const phoneInput = document.getElementById("phone");
+    phoneInput.addEventListener("input", function () {
+    if (!/^[0-9]{0,10}$/.test(this.value)) {
+    this.value = this.value.slice(0, -1); // allow only digits
+    }
+    });
+
+  </script>
+</body>
+</html>
