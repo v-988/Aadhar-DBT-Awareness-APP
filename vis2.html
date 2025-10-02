@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DBT & Aadhaar Awareness</title>
+  <link rel="stylesheet" href="vis2.css" />
+</head>
+<!--<script>
+  const user = localStorage.getItem("loggedInUser");
+  if (user) {
+    document.getElementById("welcomeMessage").textContent = "Hello " + user;
+  }
+</script>-->
+
+<body>
+  <!-- Welcome banner -->
+   <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="foods/Newlogo.png" alt="Logo" width="40px">
+  </div>
+  <div class="nav-container">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#content">Content</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><button id="darkModeToggle">🌙</button></li>
+      <li><div id="google_translate_element"></div></li>
+    </ul>
+  </div>
+</nav>
+
+  <h2 id="welcomeMessage"></h2>
+  <header class="hero-outer">
+    <div class="hero container">
+      <div id="welcome" class="welcome">👋 Welcome to <strong>DBT & Aadhaar Awareness</strong></div>
+      <div class="hero-left">
+        <div class="top-label">Awareness · Quiz</div>
+        <h1 id="heroTitle">DBT & Aadhaar — Learn & Protect Your Scholarship</h1>
+        <p id="heroDesc">Quick interactive learning: difference between Aadhaar-linked and DBT-enabled (Aadhaar-seeded) bank accounts.</p>
+
+        <div class="controls-row">
+          <select id="langSelect" title="Choose language">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ta">தமிழ்</option>
+            <option value="te">తెలుగు</option>
+            <option value="kn">ಕನ್ನಡ</option>
+            <option value="ml">മലയാളം</option>
+          </select>
+
+          <button id="getStarted" class="btn primary">Get Started</button>
+          <button id="guideOpen" class="btn outline">How to Enable DBT</button>
+        </div>
+
+        <ul class="features-list" id="featuresList">
+          <li><strong>Scenario-based Learning</strong> — See what happens if you only link Aadhaar but don’t enable DBT.</li>
+          <li><strong>Step-by-step Guidance</strong> — How to seed Aadhaar and enable DBT.</li>
+          <li><strong>Notifications</strong> — Browser reminders to update seeding.</li>
+          <li><strong>Multilingual</strong> — English + regional languages.</li>
+        </ul>
+      </div>
+
+      <div class="hero-right">
+        <div class="float-wrap">
+          <div class="f-card f1">Aadhaar</div>
+          <div class="f-card f2">DBT</div>
+          <div class="f-card f3"><a href="schexp.html" style="text-decoration: none; color: aliceblue;">Scholarship</a></div>
+        </div>
+
+        <div class="cta-box">
+          <h3>Save your scholarship — enable DBT</h3>
+          <p>Make sure your account is DBT-enabled so government scholarships reach you directly.</p>
+          <!--<button id="watchVid" class="btn light">Click to about the Scholarship provided by our Government</button>-->
+          <a href="schexp.html" class="btn light" id="watchVid">
+            Click to know about the Scholarship provided by our Government
+          </a>
+        </div>
+          
+          <div class="cta-box1">
+          <h3>Save your scholarship — enable DBT</h3>
+          <p>Make sure your account is DBT-enabled so government scholarships reach you directly.</p>
+          <!--<button id="watchVid" class="btn light">Click to about the Scholarship provided by our Government</button>-->
+          <a href="schexp.html" class="btn light" id="watchVid">
+            Click to know about the Scholarship provided by our Government
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </header>
+<section id="mission-vision">
+  <h2>Our Mission & Vision</h2>
+  <div class="mv-container">
+    <div class="mv-box">
+      <h3>Mission</h3>
+      <p>
+        To spread awareness among students and citizens about the importance of
+        linking Aadhar with bank accounts and Direct Benefit Transfer (DBT),
+        ensuring easy access to government schemes and benefits.
+      </p>
+    </div>
+    <div class="mv-box">
+      <h3>Vision</h3>
+      <p>
+        To empower every individual with knowledge and resources so that they
+        can benefit from transparent, efficient, and inclusive digital
+        governance systems in India.
+      </p>
+    </div>
+  </div>
+</section>
+
+<h2 style="text-align: center; font-size: 35px;" >Know about Aadhaar-Linked Account & DBT-Enabled Aadhaar-Seeded Account</h2>
+<main class="container main-grid">
+  <!-- Two-column comparison -->
+  <section class="compare">
+        <div class="col card" id="aadhaarCol" onclick="toggleDetails('aadhaarDetails')">
+            <div class="col-content">
+                <h3 id="col1Title">
+                    Aadhaar-Linked Account
+                    <span class="security-badge">Secure</span>
+                </h3>
+                <p id="col1Text">
+                    Linked to Aadhaar for robust identity verification and seamless access to government services. 
+                    Essential for KYC compliance and Direct Benefit Transfer (DBT) eligibility with enhanced security features.
+                </p>
+                <div class="click-hint">
+                    <span>Click to explore features</span>
+                    <div class="expand-icon"></div>
+                </div>
+            </div>
+            
+            <div id="aadhaarDetails" class="details">
+                <h4>Key Advantages</h4>
+                <ul>
+                    <li>Instant digital identity verification (eKYC)</li>
+                    <li>Eliminates duplicate and fake accounts</li>
+                    <li>Streamlined onboarding process</li>
+                    <li>Enhanced fraud prevention and security</li>
+                    <li>Unified identity across all government services</li>
+                    <li>Paperless documentation and storage</li>
+                    <li>Real-time authentication capabilities</li>
+                </ul>
+
+                <h4>Core Features</h4>
+                <ul>
+                    <li>Biometric authentication (fingerprint & iris scan)</li>
+                    <li>Demographic data verification</li>
+                    <li>OTP-based mobile authentication</li>
+                    <li>QR code scanning for instant verification</li>
+                    <li>XML-based data sharing with consent</li>
+                    <li>Multi-factor authentication support</li>
+                    <li>Offline verification capabilities</li>
+                    <li>API integration for seamless connectivity</li>
+                </ul>
+
+                <h4>Direct Benefits</h4>
+                <ul>
+                    <li>Faster KYC completion at banks and financial institutions</li>
+                    <li>Direct access to government subsidies and benefits</li>
+                    <li>Simplified college and job application processes</li>
+                    <li>Instant loan and credit approvals</li>
+                    <li>Digital wallet and UPI integration</li>
+                    <li>Seamless tax filing and refund processing</li>
+                    <li>Healthcare services and insurance claims</li>
+                    <li>Educational scholarship applications</li>
+                    <li>Property registration and legal documentation</li>
+                </ul>
+
+                <h4>Government Services Access</h4>
+                <ul>
+                    <li>Public Distribution System (PDS) benefits</li>
+                    <li>MGNREGA employment guarantee scheme</li>
+                    <li>Pension and social security schemes</li>
+                    <li>LPG subsidy transfers</li>
+                    <li>Jan Dhan Yojana account opening</li>
+                    <li>Pradhan Mantri housing schemes</li>
+                    <li>Digital India services and certificates</li>
+                </ul>
+
+                <img src="https://via.placeholder.com/400x250/f0f0f0/666666?text=Aadhaar+Verification+Process" 
+                     alt="Aadhaar verification process illustration" 
+                     class="aadhaar-image">
+            </div>
+        </div>
+
+        <div class="col card" id="dbtCol" onclick="toggleDetails('dbtDetails')">
+            <div class="col-content">
+                <h3 id="col2Title">
+                    DBT-Enabled Aadhaar-Seeded Account
+                    <span class="dbt-badge">Primary</span>
+                </h3>
+                <p id="col2Text">
+                    Designated by your bank as the primary account for Direct Benefit Transfers (DBT). 
+                    This account receives government benefit payments, scholarships, and subsidies directly 
+                    through the National Payments Corporation of India (NPCI) routing system.
+                </p>
+                <div class="click-hint">
+                    <span>Click to explore DBT benefits</span>
+                    <div class="expand-icon"></div>
+                </div>
+            </div>
+            
+            <div id="dbtDetails" class="details">
+                <div class="importance-box">
+                    <h5>Critical Importance</h5>
+                    <p>
+                        This account is essential for receiving direct scholarship transfers, government subsidies, 
+                        and social welfare payments. NPCI automatically routes all government benefit payments to 
+                        your DBT-enabled account, ensuring you don't miss any financial assistance.
+                    </p>
+                </div>
+
+                <h4>Key Advantages</h4>
+                <ul>
+                    <li>Guaranteed receipt of all government benefit transfers</li>
+                    <li>Eliminates payment delays and processing bottlenecks</li>
+                    <li>Prevents fund diversion and leakage in the system</li>
+                    <li>Automatic routing of scholarship and subsidy payments</li>
+                    <li>Real-time payment notifications and confirmations</li>
+                    <li>Transparent transaction tracking and audit trail</li>
+                    <li>Reduces dependency on intermediaries and agents</li>
+                    <li>Direct credit without manual intervention</li>
+                </ul>
+
+                <h4>Core Features</h4>
+                <ul>
+                    <li>NPCI-enabled direct routing system integration</li>
+                    <li>Aadhaar-based beneficiary authentication</li>
+                    <li>Real-time gross settlement (RTGS) support</li>
+                    <li>Multi-channel payment acceptance capability</li>
+                    <li>Automated reconciliation and reporting</li>
+                    <li>Mobile banking and SMS alert integration</li>
+                    <li>API connectivity for government payment systems</li>
+                    <li>Biometric verification for high-value transactions</li>
+                </ul>
+
+                <h4>Direct Benefits & Transfers</h4>
+                <ul>
+                    <li>Educational scholarships and fee reimbursements</li>
+                    <li>LPG cooking gas subsidy direct transfers</li>
+                    <li>MGNREGA employment guarantee payments</li>
+                    <li>Old age pension and widow pension schemes</li>
+                    <li>PM-KISAN farmer income support payments</li>
+                    <li>Ayushman Bharat health insurance claims</li>
+                    <li>Housing scheme assistance and subsidies</li>
+                    <li>Food security and ration card benefits</li>
+                    <li>Skill development training stipends</li>
+                    <li>Emergency financial assistance during disasters</li>
+                </ul>
+
+                <h4>Government Schemes Coverage</h4>
+                <ul>
+                    <li>Pradhan Mantri Jan Dhan Yojana benefits</li>
+                    <li>National Social Assistance Programme (NSAP)</li>
+                    <li>Pradhan Mantri Fasal Bima Yojana claims</li>
+                    <li>Swachh Bharat Mission incentive payments</li>
+                    <li>Digital India skill development rewards</li>
+                    <li>Startup India funding and grants</li>
+                    <li>Make in India manufacturing incentives</li>
+                    <li>Rural development program disbursements</li>
+                </ul>
+
+                <h4>Financial Security & Transparency</h4>
+                <ul>
+                    <li>End-to-end encrypted transaction processing</li>
+                    <li>Tamper-proof digital payment records</li>
+                    <li>Instant SMS and email payment confirmations</li>
+                    <li>Online portal access for payment history</li>
+                    <li>Grievance redressal system integration</li>
+                    <li>Fraud detection and prevention mechanisms</li>
+                    <li>Regular account activity monitoring</li>
+                </ul>
+
+                <img src="https://via.placeholder.com/400x280/e8f5e8/2e7d32?text=DBT+Payment+Flow+%E2%86%92+Your+Account" 
+                     alt="DBT payment flow diagram showing direct transfer process" 
+                     class="dbt-image">
+            </div>
+        </div>
+  </section>
+</main>
+
+    <!-- Awareness modules -->
+    <!-- Awareness modules -->
+<section class="awareness card">
+  <br>
+  <h2 style="text-align: center; font-size: 40px;"><strong>Awarness Modules</strong></h2>
+  <br>
+  <br>
+  <div class="module-grid">
+    <div class="module">
+      <h4>Scenario-based Learning</h4>
+      <p>Interactive animated flow (Aadhaar-Linked vs DBT-enabled)</p>
+      <img src="foods/ss1.png" class="thumb" alt="scenario">
+      <button class="btn" onclick="openScenarioModal()">Open Scenario</button>
+    </div>
+
+    <div class="module">
+      <h4>Step-by-Step Guidance</h4>
+      <p>How to seed Aadhaar & enable DBT at bank / online.</p>
+      <div class="thumb-multi">
+        <img src="foods/g3.png" alt="Guide step 1">
+        <img src="foods/g1.png" alt="Guide step 2">
+        <img src="foods/g2.png" alt="Guide step 3">
+      </div>
+
+      <button class="btn" onclick="openGuideModal()">Open Guide</button>
+    </div>
+
+    <div class="module">
+      <h4>Awareness Video</h4>
+      <p>Short animation explaining Aadhaar vs DBT.</p>
+      <video class="thumb-video" id="awVideo" controls preload="metadata">
+        <source src="foods/Awarness.mp4" type="video/mp4">
+      </video>
+      <video class="thumb-video" id="awVideo" controls preload="metadata">
+        <source src="foods/Awar2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- New Scholarship Awareness Module -->
+    <div class="module">
+      <h4>Save Your Scholarship</h4>
+      <p>Make sure your account is DBT-enabled so government scholarships reach you directly.</p>
+      <!-- First video -->
+      <video class="thumb-video" id="scholarshipVideo1" controls preload="metadata">
+       <source src="foods/baby.mp4" type="video/mp4">
+        <!--Your browser does not support the video tag.-->
+      </video>
+
+      <!-- Second video -->
+       <video class="thumb-video" id="scholarshipVideo2" controls preload="metadata">
+       <source src="foods/adult.mp4" type="video/mp4">
+        <!--Your browser does not support the video tag.-->
+        </video>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Quiz -->
+   <!-- Quiz Section (replace your current quiz section with this) -->
+<br>
+<br>
+<section class="quiz card" id="quizSection">
+  <br>
+  <h2 style="text-align: center;">Quiz — Test Your Knowledge</h2>
+  <br>
+  <div class="quiz-controls" style="padding-left: 210px;">
+    <label for="quizLang">Language:</label>
+    <select id="quizLang">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ta">தமிழ்</option>
+      <option value="te">తెలుగు</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="ml">മലയാളം</option>
+    </select>
+
+    <label for="quizLevel">Difficulty:</label>
+    <select id="quizLevel">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+
+    <label style="margin-left:8px;">
+      <input type="checkbox" id="autoAdvanceToggle" checked />
+      Auto-next
+    </label>
+
+    <button id="startQuizBtn" class="btn primary">Start Quiz</button>
+    <button id="notifyBtn" class="btn light">Remind Me Later</button>
+  </div>
+
+  <div class="quiz-wrap hidden" id="quizWrap">
+    <div class="progress"><div id="progressFill"></div></div>
+
+    <div class="q-row">
+      <div id="qText" class="q-text">Press Start to begin</div>
+      <div id="options" class="options" role="list"></div>
+    </div>
+
+    <div id="explain" class="explain" aria-live="polite"></div>
+
+    <div class="quiz-footer">
+      <div id="scoreBox">Score: 0</div>
+      <div>
+        <button id="nextBtn" class="btn outline hidden">Next</button>
+        <button id="finishBtn" class="btn outline hidden">Finish</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="feedback-container">
+    <div class="feedback-content">
+        <!-- Left side: Feedback Form -->
+        <div class="feedback-form">
+            <div class="feedback-header">
+                <h2>User's Feedback</h2>
+                <p>We value your opinion! Please share your thoughts about our website.</p>
+            </div>
+
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name">Your Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Feedback Category</label>
+                    <select id="category" name="category">
+                        <option value="">Select a category</option>
+                        <option value="design">Design & Layout</option>
+                        <option value="usability">Usability</option>
+                        <option value="content">Content Quality</option>
+                        <option value="performance">Website Performance</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Overall Rating</label>
+                    <div class="rating-group">
+                        <div class="rating-option">
+                            <input type="radio" id="excellent" name="rating" value="excellent">
+                            <label for="excellent">Excellent</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="good" name="rating" value="good">
+                            <label for="good">Good</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="average" name="rating" value="average">
+                            <label for="average">Average</label>
+                        </div>
+                        <div class="rating-option">
+                            <input type="radio" id="poor" name="rating" value="poor">
+                            <label for="poor">Poor</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Feedback <span class="required">*</span></label>
+                    <textarea id="message" name="message" placeholder="Please share your detailed feedback, suggestions, or any issues you've encountered..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+
+            <div id="successMessage" class="success-message">
+                ✓ Feedback Submitted Successfully! Thank you for your valuable input.
+            </div>
+        </div>
+
+        <!-- Right side: Image -->
+        <div class="feedback-image">
+            <img src="foods/child.png" class="sc" alt="Happy Children">
+        </div>
+    </div>
+</div>
+    <section class="contact-section">
+        <div class="contact-wrapper">
+            <div class="contact-container">
+            <div class="image-side">
+                <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Contact Us" class="contact-image">
+                <div class="image-overlay"></div>
+            </div>
+            
+            <div class="contact-details">
+                <h2 class="contact-title">Contact Us</h2>
+                <p class="contact-subtitle">We'd love to hear from you. Get in touch with us today and let's start a conversation!</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="contact-text">123 Business Street, Suite 100<br>New York, NY 10001</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        <span class="contact-text">+1 (555) 123-4567</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        <span class="contact-text">info@company.com</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="contact-text">Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</span>
+                    </div>
+                </div>
+                
+                <div class="social-section">
+                    <h3 class="social-title">Stay Connected With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon facebook">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="#" class="social-icon instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="#" class="social-icon whatsapp">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.686z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="#" class="social-icon twitter">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="#" class="social-icon telegram">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <footer class="footer">
+    <div>© 2025 DBT Awareness — Student Project</div>
+    <div class="tiny">Multilingual • Scenario-based • Notifications</div>
+  </footer>
+
+  <!-- Scenario Modal -->
+  <div id="scenarioModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-inner card">
+      <h4>Scenario: Aadhaar Linked vs DBT-Enabled</h4>
+      <p>Choose a scenario to see the money flow:</p>
+      <div class="scenario-controls">
+        <button class="btn" onclick="playScenario('linked')">Only Aadhaar Linked</button>
+        <button class="btn primary" onclick="playScenario('dbt')">Aadhaar + DBT Enabled</button>
+      </div>
+
+      <div class="scenario-anim">
+        <div class="actor govt">🏛️ Govt</div>
+        <div class="arrow" id="arrow1"></div>
+        <div class="actor bank">🏦 Bank</div>
+        <div class="arrow" id="arrow2"></div>
+        <div class="actor student">🎓 Student</div>
+      </div>
+      <div id="scenarioMsg" class="scenario-msg"></div>
+
+      <div style="text-align:right;margin-top:12px"><button class="btn outline" onclick="closeScenarioModal()">Close</button></div>
+    </div>
+  </div>
+
+  <!-- Guide Modal -->
+  <div id="guideModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-inner card">
+      <h4>Step-by-Step: How to enable DBT and check seeding</h4>
+      <ol>
+        <li>Visit bank branch with Aadhaar & passbook or use UMANG / bank netbanking.</li>
+        <li>Ask staff to seed Aadhaar (link) to your account (KYC).</li>
+        <li>Ask bank to mark the account as DBT-enabled / primary for benefits.</li>
+        <li>Take acknowledgement slip and verify on scholarship portal before deadlines.</li>
+      </ol>
+      <p><strong>Tip:</strong> If multiple accounts are linked, only the DBT-enabled one receives the payment.</p>
+      <div class="video-btn-container">
+      <a href="https://www.youtube.com/watch?v=UkgTTVs7nqM" target="_blank" class="video-btn">
+      Watch YouTube Video
+      </a>
+      </div>
+
+      <div style="text-align:right"><button class="btn" onclick="closeGuideModal()">Close</button></div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const user = localStorage.getItem("loggedInUser");
+      if (user) {
+        document.getElementById("welcomeMessage").textContent = "👋 Hello " + user;
+      }
+    });
+  const toggleBtn = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  // Load saved theme from localStorage
+  if (localStorage.getItem("dark-mode") === "enabled") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      toggleBtn.textContent = "☀️"; // Sun icon
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      toggleBtn.textContent = "🌙"; // Moon icon
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  });
+
+
+  </script>
+
+
+
+  <script src="vis2.js"></script>
+</body>
+</html>
