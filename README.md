@@ -59,8 +59,6 @@ A bank account enabled for receiving government subsidies, scholarships, and wel
 
 ## 📊 Application Preview
 
-<h2 align="center">📊 Application Preview</h2>
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a8abb1bd-3317-4db1-9c8a-cd4781ab4f89" width="750">
 </p>
