@@ -52,20 +52,18 @@ A bank account enabled for receiving government subsidies, scholarships, and wel
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="images/<img width="1536" height="1024" alt="Aadhar Dbt architecture" src="https://github.com/user-attachments/assets/7a6458f3-ffe3-4fe6-8466-1a6fa326b1aa" />
-" width="750">
+   <img src="https://github.com/user-attachments/assets/7a6458f3-ffe3-4fe6-8466-1a6fa326b1aa" width="750">
 </p>
 
 ---
 
 ## 📊 Application Preview
 
-<h2 align="center">🏗️ System Architecture</h2>
+<h2 align="center">📊 Application Preview</h2>
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a8abb1bd-3317-4db1-9c8a-cd4781ab4f89" width="750">
 </p>
-
 ---
 
 ## ⚙️ Workflow
