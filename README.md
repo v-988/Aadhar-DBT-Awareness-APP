@@ -63,7 +63,7 @@ A bank account enabled for receiving government subsidies, scholarships, and wel
 <h2 align="center">🏗️ System Architecture</h2>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b90fc419-2723-464a-a139-88efbb939d3f" width="750">
+  <img src="https://github.com/user-attachments/assets/a8abb1bd-3317-4db1-9c8a-cd4781ab4f89" width="750">
 </p>
 
 ---
